@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var api = require('../lib/api');
-var sortValues = ['Ascending', 'Descending', 'None'];
+var sortValues = ['Ascending', 'Descending', 'Default'];
 
 
 var compareModels = function(a, b) {
@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
 router.get('/models', function(req, res, next) {
 	return Promise.all([api.fetchModels()])
 		.then(function(models) {
-			res.render('models', {models: models[0], sort: 'default'});
+			res.render('models', {models: models[0], sortValues: sortValues, sort: 'Default'});
 		});
 });
 router.post('/models', function(req, res, next) {

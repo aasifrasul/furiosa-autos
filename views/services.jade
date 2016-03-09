@@ -5,11 +5,11 @@ block body
 		h2 Services we provide
 
 		//- Implement filtering here
-		h3 Sort
+		h3 Filter
 		form(name="filter", method="post")
 			div.input
 				for filter in filterValues
-					span.label= filter
+					span.label(class='label-default')= filter
 					input(type="checkbox", group="filter" , name= filter, checked= filterSelectedValues[filter], value= filter)
 			div.actions
 				input(type="submit", value="Filter")
