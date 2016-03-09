@@ -5,6 +5,14 @@ block body
 		h2 Models we work on
 
 		//- Implement sorting here
+		h3 Sort
+		form(name="sort", method="post")
+			div.input
+				for sortV in sortValues
+					spab.label= sortV
+					input(type="radio", name="sort", checked= sort === sortV, value= sortV)
+			div.actions
+				input(type="submit", value="Sort")
 
 		for model in models
 			h4= model

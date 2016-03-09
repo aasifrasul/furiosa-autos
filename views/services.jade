@@ -5,6 +5,15 @@ block body
 		h2 Services we provide
 
 		//- Implement filtering here
+		h3 Sort
+		form(name="filter", method="post")
+			div.input
+				for filter in filterValues
+					span.label= filter
+					input(type="checkbox", group="filter" , name= filter, checked= filterSelectedValues[filter], value= filter)
+			div.actions
+				input(type="submit", value="Filter")
+
 
 		for service in services
 			h4= service.job

@@ -5,8 +5,25 @@ block body
 		h2 Customer reviews
 
 		//- Implement search here
+		h3 Sort
+		form(name="search", method="post")
+			div.input
+				span.label= Search
+				input(type="tex", name="search", value= search)
+			div.actions
+				input(type="submit", value="Submit")
 
-		for review in reviews
+
+		for review in customerReviews
+			blockquote
+				p= review.content
+				footer= review.source
+
+		h2 Corporate reviews
+
+		//- Implement search here
+
+		for review in corporateReviews
 			blockquote
 				p= review.content
 				footer= review.source
